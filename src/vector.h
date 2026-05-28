@@ -296,5 +296,34 @@ public:
         std::swap(capacity_, other.capacity_);
     }
 
+    // =============================================================
+    // commit #8: palyginimo operatoriai – ==, !=, <, <=, >, >=
+    // =============================================================
 
+    bool operator==(const Vector& other) const {
+        if (size_ != other.size_) return false;
+        for (size_t i = 0; i < size_; ++i)
+            if (data_[i] != other.data_[i]) return false;
+        return true;
+    }
+
+    bool operator!=(const Vector& other) const { return !(*this == other); }
+
+    bool operator<(const Vector& other) const {
+        return std::lexicographical_compare(begin(), end(),
+                                            other.begin(), other.end());
+    }
+
+    bool operator<=(const Vector& other) const { return !(other < *this); }
+    bool operator>(const Vector& other)  const { return other < *this; }
+    bool operator>=(const Vector& other) const { return !(*this < other); }
+};
+
+// =============================================================
+// commit #8 (tęsinys): ne-narys swap
+// =============================================================
+
+template <typename T>
+void swap(Vector<T>& a, Vector<T>& b) noexcept {
+    a.swap(b);
 }
