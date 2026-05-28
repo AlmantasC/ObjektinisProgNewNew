@@ -243,5 +243,58 @@ public:
         return data_ + idxFirst;
     }
 
+    // =============================================================
+    // commit #7: modifiers II – resize, emplace_back, assign, swap
+    // =============================================================
+
+    void resize(size_t newSize, const T& val = T()) {
+        if (newSize > capacity_)
+            reallocate(newSize);
+        if (newSize > size_)
+            for (size_t i = size_; i < newSize; ++i)
+                data_[i] = val;
+        size_ = newSize;
+    }
+
+    template <typename... Args>
+    iterator emplace(const_iterator pos, Args&&... args) {
+        size_t idx = pos - data_;
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        for (size_t i = size_; i > idx; --i)
+            data_[i] = std::move(data_[i - 1]);
+        data_[idx] = T(std::forward<Args>(args)...);
+        ++size_;
+        return data_ + idx;
+    }
+
+    template <typename... Args>
+    void emplace_back(Args&&... args) {
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        data_[size_++] = T(std::forward<Args>(args)...);
+    }
+
+    void push_back(T&& val) {
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        data_[size_++] = std::move(val);
+    }
+
+    void assign(size_t count, const T& val) {
+        clear();
+        resize(count, val);
+    }
+
+    void assign(std::initializer_list<T> il) {
+        *this = il;
+    }
+
+    void swap(Vector& other) noexcept {
+        std::swap(data_,     other.data_);
+        std::swap(size_,     other.size_);
+        std::swap(capacity_, other.capacity_);
+    }
+
 
 }
