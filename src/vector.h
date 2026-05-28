@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <algorithm>
+#include <limits>
 
 template <typename T>
 class Vector {
@@ -97,4 +98,27 @@ public:
     // --- Element access ---
     T& operator[](size_t i)             { return data_[i]; }
     const T& operator[](size_t i) const { return data_[i]; }
+
+    // --- reserve ---
+    void reserve(size_t newCap) {
+        if (newCap <= capacity_) return;
+        reallocate(newCap);
+    }
+
+    // --- shrink_to_fit ---
+    void shrink_to_fit() {
+        if (size_ == capacity_) return;
+        if (size_ == 0) {
+            delete[] data_;
+            data_     = nullptr;
+            capacity_ = 0;
+            return;
+        }
+        reallocate(size_);
+    }
+
+    // --- max_size ---
+    size_t max_size() const {
+        return std::numeric_limits<size_t>::max() / sizeof(T);
+    }
 };
