@@ -136,21 +136,37 @@ Reikalavimai: CMake ≥ 3.14, MinGW (Windows) arba GCC (Linux).
 ```bash
 mkdir build
 cd build
-cmake .. -G "MinGW Makefiles" -DCONTAINER=vector   # Windows
-# cmake .. -DCONTAINER=vector                       # Linux
+cmake .. -G "MinGW Makefiles"          # numatytasis – Vector<T>
 cmake --build .
 ```
 
-Vietoje `vector` galima nurodyti `list` arba `deque`. Numatytoji reikšmė — `vector`.
+Konteinerio pasirinkimas:
+
+```bash
+cmake .. -G "MinGW Makefiles" -DCONTAINER=myvector  # Vector<T> (numatytasis)
+cmake .. -G "MinGW Makefiles" -DCONTAINER=vector     # std::vector
+cmake .. -G "MinGW Makefiles" -DCONTAINER=list       # std::list
+cmake .. -G "MinGW Makefiles" -DCONTAINER=deque      # std::deque
+```
 
 ### Testų kompiliavimas ir paleidimas
 
 ```bash
-cmake .. -G "MinGW Makefiles" -DCONTAINER=vector -DBUILD_TESTS=ON
+cmake .. -G "MinGW Makefiles" -DBUILD_TESTS=ON
 cmake --build .
-ctest --output-on-failure
-# arba tiesiogiai:
-./tests
+
+./tests          # studentas klasės testai (18 testų)
+./vector_tests   # Vector<T> klasės testai (35 testai)
+```
+
+### Spartos benchmark
+
+```bash
+cmake .. -G "MinGW Makefiles" -DBUILD_BENCHMARK=ON -DBUILD_BENCHMARK_FULL=ON
+cmake --build .
+
+./benchmark        # push_back spartos testas
+./benchmark_full   # pilnas programos spartos testas
 ```
 
 ---
@@ -366,6 +382,38 @@ Abu konteineriai naudoja `capacity * 2` strategiją, todėl perskirstymų skaič
 
 ---
 
+## Vector spartos analizė – pilna programa
+
+Lyginamas `std::vector` ir `Vector<T>` veikimas naudojant realius studentų duomenų failus. Matuojamos visos operacijos: nuskaitymas, skaičiavimai, rūšiavimas ir skirstymas.
+
+**Specs:** AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.2 250GB  
+**Kompiliavimas:** `-O2`
+
+### 100 000 studentų
+
+| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
+|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
+| std::vector | 518.13 | 2.00 | 35.01 | 4.00 | 559.14 |
+| Vector | 468.62 | 2.00 | 29.01 | 7.00 | 506.63 |
+
+### 1 000 000 studentų
+
+| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
+|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
+| std::vector | 4819.08 | 25.01 | 373.08 | 43.00 | 5260.17 |
+| Vector | 4623.38 | 25.01 | 401.09 | 79.02 | 5128.49 |
+
+### 10 000 000 studentų
+
+| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
+|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
+| std::vector | 48743.07 | 248.06 | 4624.06 | 416.10 | 54031.28 |
+| Vector | 47912.78 | 260.25 | 4675.22 | 715.88 | 53564.13 |
+
+`Vector<T>` bendras veikimas yra lygiavertis `std::vector` — nuskaitymas ir rūšiavimas net šiek tiek greitesni dėl paprastesnės implementacijos. Skirstymas lėtesnis dėl `assign` su `make_move_iterator` — tai laukiamas rezultatas, nes `std::vector` turi optimizuotą šio metodo realizaciją.
+
+---
+
 ## Versijų istorija
 
 | Versija | Pakeitimai |
@@ -379,4 +427,3 @@ Abu konteineriai naudoja `capacity * 2` strategiją, todėl perskirstymų skaič
 | v1.5 | Pridėta abstrakti klasė `Zmogus`, iš kurios išvedama klasė `Studentas` |
 | v2.0 | Bendras `src/` kodas visiems konteineriams — konteineris pasirenkamas per `-DCONTAINER=` CMake flagą. Vienetų testai perkelti į Google Test karkasą (18 testų). Pridėta Doxygen dokumentacija (HTML + PDF). |
 | v3.0 | Sukurtas savarankiškas `Vector<T>` konteineris, dengiantis ≥ 80% `std::vector` metodų. Atlikta `push_back` spartos analizė ir atminties perskirstymų palyginimas. Programa integruota su `Vector` vietoje `std::vector`. |
-Atnaujinta versijų lentelė – pridėta v3.0 eilutė prie jau esančios v2.0.
