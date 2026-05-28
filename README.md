@@ -382,35 +382,6 @@ Abu konteineriai naudoja `capacity * 2` strategiją, todėl perskirstymų skaič
 
 ---
 
-## Vector spartos analizė – pilna programa
-
-Lyginamas `std::vector` ir `Vector<T>` veikimas naudojant realius studentų duomenų failus. Matuojamos visos operacijos: nuskaitymas, skaičiavimai, rūšiavimas ir skirstymas.
-
-**Specs:** AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.2 250GB  
-**Kompiliavimas:** `-O2`
-
-### 100 000 studentų
-
-| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
-|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
-| std::vector | 518.13 | 2.00 | 35.01 | 4.00 | 559.14 |
-| Vector | 468.62 | 2.00 | 29.01 | 7.00 | 506.63 |
-
-### 1 000 000 studentų
-
-| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
-|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
-| std::vector | 4819.08 | 25.01 | 373.08 | 43.00 | 5260.17 |
-| Vector | 4623.38 | 25.01 | 401.09 | 79.02 | 5128.49 |
-
-### 10 000 000 studentų
-
-| Konteineris | Nuskaitymas (ms) | Skaičiavimai (ms) | Rūšiavimas (ms) | Skirstymas (ms) | Iš viso (ms) |
-|-------------|----------------:|------------------:|----------------:|----------------:|-------------:|
-| std::vector | 48743.07 | 248.06 | 4624.06 | 416.10 | 54031.28 |
-| Vector | 47912.78 | 260.25 | 4675.22 | 715.88 | 53564.13 |
-
-`Vector<T>` bendras veikimas yra lygiavertis `std::vector` — nuskaitymas ir rūšiavimas net šiek tiek greitesni dėl paprastesnės implementacijos. Skirstymas lėtesnis dėl `assign` su `make_move_iterator` — tai laukiamas rezultatas, nes `std::vector` turi optimizuotą šio metodo realizaciją.
 
 ---
 
