@@ -322,6 +322,50 @@ doxygen Doxyfile
 
 ---
 
+## Vector konteineris (v3.0)
+
+Vietoje `std::vector` naudojamas savarankiškai sukurtas `Vector<T>` šabloninis konteineris, dengiąs ≥ 80% `std::vector` funkcijų.
+
+### Implementuotos funkcijos
+
+| Kategorija | Funkcijos |
+|------------|-----------|
+| Konstruktoriai | `Vector()`, `Vector(n, val)`, `Vector(init_list)`, copy, move, `operator=` |
+| Capacity | `size()`, `capacity()`, `empty()`, `reserve()`, `shrink_to_fit()`, `max_size()` |
+| Element access | `operator[]`, `at()`, `front()`, `back()`, `data()` |
+| Modifiers | `push_back()`, `pop_back()`, `insert()`, `erase()`, `clear()`, `resize()`, `emplace_back()`, `assign()`, `swap()` |
+| Iteratoriai | `begin()`, `end()`, `cbegin()`, `cend()`, `rbegin()`, `rend()` |
+| Operatoriai | `==`, `!=`, `<`, `<=`, `>`, `>=` |
+
+### push_back spartos analizė
+
+Lyginamas `std::vector` ir `Vector` užpildymo laikas naudojant `push_back()` (5 paleidimų vidurkis, `-O2`).
+
+**Specs:** AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.2 250GB
+
+| Elementų sk. | std::vector (ms) | Vector (ms) | Santykis |
+|-------------:|-----------------:|------------:|---------:|
+| 10 000 | 0.200 | 0.000 | 0.00 |
+| 100 000 | 1.400 | 1.000 | 0.71 |
+| 1 000 000 | 14.575 | 8.802 | 0.60 |
+| 10 000 000 | 149.533 | 120.233 | 0.80 |
+| 100 000 000 | 1396.726 | 1146.366 | 0.82 |
+
+`Vector` pasirodo lygiavertiškai arba greičiau – tai laukiamas rezultatas, nes implementacija naudoja tą pačią `capacity * 2` strategiją, tačiau be kai kurių `std::vector` papildomų patikrinimų.
+
+### Atminties perskirstymai
+
+Užpildant 100 000 000 elementų `push_back()` funkcija:
+
+| Konteineris | Perskirstymų sk. |
+|-------------|----------------:|
+| std::vector | 28 |
+| Vector | 28 |
+
+Abu konteineriai naudoja `capacity * 2` strategiją, todėl perskirstymų skaičius sutampa. Perskirstymas įvyksta kai `capacity() == size()`.
+
+---
+
 ## Versijų istorija
 
 | Versija | Pakeitimai |
@@ -334,3 +378,5 @@ doxygen Doxyfile
 | v1.2 | `struct studentas` pertvarkyta į `class studentas` su `private` laukais, getteriais ir setteriais. Realizuoti visi Rule of Five metodai (destruktorius, kopijavimo ir perkėlimo konstruktoriai, kopijavimo ir perkėlimo priskyrimo operatoriai). Perdengiami `operator<<` ir `operator>>` įvesties/išvesties operatoriai. Pridėti vienetų testai (`test.cpp`). |
 | v1.5 | Pridėta abstrakti klasė `Zmogus`, iš kurios išvedama klasė `Studentas` |
 | v2.0 | Bendras `src/` kodas visiems konteineriams — konteineris pasirenkamas per `-DCONTAINER=` CMake flagą. Vienetų testai perkelti į Google Test karkasą (18 testų). Pridėta Doxygen dokumentacija (HTML + PDF). |
+| v3.0 | Sukurtas savarankiškas `Vector<T>` konteineris, dengiantis ≥ 80% `std::vector` metodų. Atlikta `push_back` spartos analizė ir atminties perskirstymų palyginimas. Programa integruota su `Vector` vietoje `std::vector`. |
+Atnaujinta versijų lentelė – pridėta v3.0 eilutė prie jau esančios v2.0.
