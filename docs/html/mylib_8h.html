@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mylib_8h.html'
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
+<code>#include &quot;<a class="el" href="vector_8h_source.html">Vector.h</a>&quot;</code><br />
 </div>
 <p><a href="mylib_8h_source.html">Eiti į šio failo programos kodą.</a></p>
 <table class="memberdecls">
@@ -136,8 +137,8 @@ Klasės</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Tipų apibrėžimai</h2></td></tr>
-<tr class="memitem:a33a483dbf796a5e821dbf3744ecf575b" id="r_a33a483dbf796a5e821dbf3744ecf575b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a33a483dbf796a5e821dbf3744ecf575b template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a> = std::vector&lt;T&gt;</td></tr>
+<tr class="memitem:a998bc8a792eb6f0fdbdaa2b6ad2b7919" id="r_a998bc8a792eb6f0fdbdaa2b6ad2b7919"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a998bc8a792eb6f0fdbdaa2b6ad2b7919 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a> = <a class="el" href="class_vector.html">Vector</a>&lt;T&gt;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funkcijos</h2></td></tr>
@@ -149,17 +150,17 @@ Funkcijos</h2></td></tr>
 <tr class="memitem:a410adede9154531f07eda8f6f3b07e2e" id="r_a410adede9154531f07eda8f6f3b07e2e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a410adede9154531f07eda8f6f3b07e2e">pagalGal</a> (const <a class="el" href="classstudentas.html">studentas</a> &amp;a, const <a class="el" href="classstudentas.html">studentas</a> &amp;b)</td></tr>
 <tr class="memitem:a81d8087f3257c783f8ba4479f103835b" id="r_a81d8087f3257c783f8ba4479f103835b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a81d8087f3257c783f8ba4479f103835b">getInt</a> (int min, int max)</td></tr>
 <tr class="memitem:a73920bb488f027ee942c894a06284486" id="r_a73920bb488f027ee942c894a06284486"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a73920bb488f027ee942c894a06284486">getFile</a> ()</td></tr>
-<tr class="memitem:a51a3dcd0a5d07efd6fc7b3f02fa0a82d" id="r_a51a3dcd0a5d07efd6fc7b3f02fa0a82d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a51a3dcd0a5d07efd6fc7b3f02fa0a82d">printRez</a> (std::ostream &amp;out, <a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int skaiciavimas)</td></tr>
-<tr class="memitem:ae4f06ac57ffc9a805399e58528b70711" id="r_ae4f06ac57ffc9a805399e58528b70711"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae4f06ac57ffc9a805399e58528b70711">ivestiRanka</a> (<a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
-<tr class="memitem:a631c551d10a6b06d4300e4081bd2a35c" id="r_a631c551d10a6b06d4300e4081bd2a35c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a631c551d10a6b06d4300e4081bd2a35c">generuotiPazymius</a> (<a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
-<tr class="memitem:a08d1aee607fbc2e6d9a2ad76c889e6a0" id="r_a08d1aee607fbc2e6d9a2ad76c889e6a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a08d1aee607fbc2e6d9a2ad76c889e6a0">generuotiViska</a> (<a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
-<tr class="memitem:a0aa3b54459502a278f12bb81a0164d5d" id="r_a0aa3b54459502a278f12bb81a0164d5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0aa3b54459502a278f12bb81a0164d5d">skaitytiIsFailo</a> (<a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m, std::string &amp;failas)</td></tr>
+<tr class="memitem:a51a3dcd0a5d07efd6fc7b3f02fa0a82d" id="r_a51a3dcd0a5d07efd6fc7b3f02fa0a82d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a51a3dcd0a5d07efd6fc7b3f02fa0a82d">printRez</a> (std::ostream &amp;out, <a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int skaiciavimas)</td></tr>
+<tr class="memitem:ae4f06ac57ffc9a805399e58528b70711" id="r_ae4f06ac57ffc9a805399e58528b70711"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae4f06ac57ffc9a805399e58528b70711">ivestiRanka</a> (<a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
+<tr class="memitem:a631c551d10a6b06d4300e4081bd2a35c" id="r_a631c551d10a6b06d4300e4081bd2a35c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a631c551d10a6b06d4300e4081bd2a35c">generuotiPazymius</a> (<a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
+<tr class="memitem:a08d1aee607fbc2e6d9a2ad76c889e6a0" id="r_a08d1aee607fbc2e6d9a2ad76c889e6a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a08d1aee607fbc2e6d9a2ad76c889e6a0">generuotiViska</a> (<a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m)</td></tr>
+<tr class="memitem:a0aa3b54459502a278f12bb81a0164d5d" id="r_a0aa3b54459502a278f12bb81a0164d5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0aa3b54459502a278f12bb81a0164d5d">skaitytiIsFailo</a> (<a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;A, int &amp;m, std::string &amp;failas)</td></tr>
 <tr class="memitem:a533a0a21b762dcd162d0c0ee9af14c1d" id="r_a533a0a21b762dcd162d0c0ee9af14c1d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a533a0a21b762dcd162d0c0ee9af14c1d">generuotiFaila</a> ()</td></tr>
-<tr class="memitem:a30dbc396804076b8d86c242ed4d23ace" id="r_a30dbc396804076b8d86c242ed4d23ace"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a30dbc396804076b8d86c242ed4d23ace">skirstymas</a> (<a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;studentai, <a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;nevykeliai)</td></tr>
+<tr class="memitem:a30dbc396804076b8d86c242ed4d23ace" id="r_a30dbc396804076b8d86c242ed4d23ace"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a30dbc396804076b8d86c242ed4d23ace">skirstymas</a> (<a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;studentai, <a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;nevykeliai)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Tipų apibrėžimų Dokumentacija</h2>
-<a id="a33a483dbf796a5e821dbf3744ecf575b" name="a33a483dbf796a5e821dbf3744ecf575b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33a483dbf796a5e821dbf3744ecf575b">&#9670;&#160;</a></span>Studentai</h2>
+<a id="a998bc8a792eb6f0fdbdaa2b6ad2b7919" name="a998bc8a792eb6f0fdbdaa2b6ad2b7919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">&#9670;&#160;</a></span>Studentai</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +168,7 @@ Funkcijos</h2></td></tr>
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a> = std::vector&lt;T&gt;</td>
+          <td class="memname">using <a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a> = <a class="el" href="class_vector.html">Vector</a>&lt;T&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -201,7 +202,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void generuotiPazymius </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,7 +223,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void generuotiViska </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -281,7 +282,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void ivestiRanka </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -370,7 +371,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -431,7 +432,7 @@ template&lt;typename Container, typename Comp&gt; </div>
         <tr>
           <td class="memname">void skaitytiIsFailo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -457,12 +458,12 @@ template&lt;typename Container, typename Comp&gt; </div>
         <tr>
           <td class="memname">void skirstymas </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a33a483dbf796a5e821dbf3744ecf575b">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>nevykeliai</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#a998bc8a792eb6f0fdbdaa2b6ad2b7919">Studentai</a>&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>nevykeliai</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

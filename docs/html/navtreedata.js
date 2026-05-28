@@ -39,25 +39,36 @@ var NAVTREE =
         [ "<span class=\"tt\">operator&gt;&gt;</span> — įvesties operatorius", "md__r_e_a_d_m_e.html#autotoc_md12", null ]
       ] ],
       [ "Kompiliavimas", "md__r_e_a_d_m_e.html#autotoc_md14", [
-        [ "Testų kompiliavimas ir paleidimas", "md__r_e_a_d_m_e.html#autotoc_md15", null ]
+        [ "Testų kompiliavimas ir paleidimas", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
+        [ "Spartos benchmark", "md__r_e_a_d_m_e.html#autotoc_md16", null ]
       ] ],
-      [ "Klasės ir Struct Kompiliavimo flag'ų testas", "md__r_e_a_d_m_e.html#autotoc_md17", [
-        [ "100 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
-        [ "1 000 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+      [ "Klasės ir Struct Kompiliavimo flag'ų testas", "md__r_e_a_d_m_e.html#autotoc_md18", [
+        [ "100 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md19", null ],
+        [ "1 000 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md20", null ]
       ] ],
-      [ "Vienetų testai", "md__r_e_a_d_m_e.html#autotoc_md21", [
-        [ "Testų paskirtis", "md__r_e_a_d_m_e.html#autotoc_md22", null ]
+      [ "Vienetų testai", "md__r_e_a_d_m_e.html#autotoc_md22", [
+        [ "Testų paskirtis", "md__r_e_a_d_m_e.html#autotoc_md23", null ]
       ] ],
-      [ "Spartos tyrimas", "md__r_e_a_d_m_e.html#autotoc_md24", [
-        [ "1 strategija", "md__r_e_a_d_m_e.html#autotoc_md26", null ],
-        [ "2 strategija", "md__r_e_a_d_m_e.html#autotoc_md28", null ],
-        [ "3 strategija", "md__r_e_a_d_m_e.html#autotoc_md30", null ]
+      [ "Spartos tyrimas", "md__r_e_a_d_m_e.html#autotoc_md25", [
+        [ "1 strategija", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
+        [ "2 strategija", "md__r_e_a_d_m_e.html#autotoc_md29", null ],
+        [ "3 strategija", "md__r_e_a_d_m_e.html#autotoc_md31", null ]
       ] ],
-      [ "Išvados", "md__r_e_a_d_m_e.html#autotoc_md32", null ],
-      [ "Dokumentacija", "md__r_e_a_d_m_e.html#autotoc_md34", [
-        [ "Dokumentacijos generavimas", "md__r_e_a_d_m_e.html#autotoc_md35", null ]
+      [ "Išvados", "md__r_e_a_d_m_e.html#autotoc_md33", null ],
+      [ "Dokumentacija", "md__r_e_a_d_m_e.html#autotoc_md35", [
+        [ "Dokumentacijos generavimas", "md__r_e_a_d_m_e.html#autotoc_md36", null ]
       ] ],
-      [ "Versijų istorija", "md__r_e_a_d_m_e.html#autotoc_md37", null ]
+      [ "Vector konteineris (v3.0)", "md__r_e_a_d_m_e.html#autotoc_md38", [
+        [ "Implementuotos funkcijos", "md__r_e_a_d_m_e.html#autotoc_md39", null ],
+        [ "push_back spartos analizė", "md__r_e_a_d_m_e.html#autotoc_md40", null ],
+        [ "Atminties perskirstymai", "md__r_e_a_d_m_e.html#autotoc_md41", null ]
+      ] ],
+      [ "Vector spartos analizė – pilna programa", "md__r_e_a_d_m_e.html#autotoc_md43", [
+        [ "100 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md44", null ],
+        [ "1 000 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md45", null ],
+        [ "10 000 000 studentų", "md__r_e_a_d_m_e.html#autotoc_md46", null ]
+      ] ],
+      [ "Versijų istorija", "md__r_e_a_d_m_e.html#autotoc_md48", null ]
     ] ],
     [ "Klasės", "annotated.html", [
       [ "Klasės", "annotated.html", "annotated_dup" ],
@@ -67,6 +78,7 @@ var NAVTREE =
         [ "Visi", "functions.html", null ],
         [ "Funkcijos", "functions_func.html", null ],
         [ "Kintamieji", "functions_vars.html", null ],
+        [ "Tipų apibrėžimai", "functions_type.html", null ],
         [ "Susiję Funkcijos", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -83,7 +95,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"vector__test_8cpp.html#ad5b369e4476b258d01da794e6df8c856"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -2,7 +2,7 @@ var mylib_8h =
 [
     [ "Zmogus", "class_zmogus.html", "class_zmogus" ],
     [ "studentas", "classstudentas.html", "classstudentas" ],
-    [ "Studentai", "mylib_8h.html#a33a483dbf796a5e821dbf3744ecf575b", null ],
+    [ "Studentai", "mylib_8h.html#a998bc8a792eb6f0fdbdaa2b6ad2b7919", null ],
     [ "generuotiFaila", "mylib_8h.html#a533a0a21b762dcd162d0c0ee9af14c1d", null ],
     [ "generuotiPazymius", "mylib_8h.html#a631c551d10a6b06d4300e4081bd2a35c", null ],
     [ "generuotiViska", "mylib_8h.html#a08d1aee607fbc2e6d9a2ad76c889e6a0", null ],

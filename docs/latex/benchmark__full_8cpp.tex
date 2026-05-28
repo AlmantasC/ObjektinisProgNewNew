@@ -1,0 +1,81 @@
+\doxysection{test/\+benchmark\+\_\+full.cpp Failo Nuoroda}
+\hypertarget{benchmark__full_8cpp}{}\label{benchmark__full_8cpp}\index{test/benchmark\_full.cpp@{test/benchmark\_full.cpp}}
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}Vector.\+h"{}}\newline
+{\ttfamily \+\#include "{}mylib.\+h"{}}\newline
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+auto \doxymbox{\hyperlink{benchmark__full_8cpp_af8a2967b796a036e51512549cf5d5907}{ms}} (auto d)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \doxymbox{\hyperlink{benchmark__full_8cpp_a75ddb78d1ecca1d79f465c00f986c2af}{skaityti}} (Container \&A, const std::\+string \&failas)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \doxymbox{\hyperlink{benchmark__full_8cpp_ac4fbc558d84790021ddb330d3eb7293b}{skaiciuoti}} (Container \&A)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \doxymbox{\hyperlink{benchmark__full_8cpp_a765da395eb78fd7beabbb7ee992cd66f}{rusiuoti\+\_\+bench}} (Container \&A)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \doxymbox{\hyperlink{benchmark__full_8cpp_a7568ea1ffc9ced595a8bf366e3e87235}{skirstyti\+\_\+bench}} (Container \&studentai, Container \&nevykeliai)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \doxymbox{\hyperlink{benchmark__full_8cpp_a832e2257f8a9039557d0ec06890e341f}{benchmark}} (const std::\+string \&failas, const std::\+string \&label)
+\item 
+int \doxymbox{\hyperlink{benchmark__full_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\label{benchmark__full_8cpp_doc-func-members}
+\Hypertarget{benchmark__full_8cpp_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{benchmark__full_8cpp_a832e2257f8a9039557d0ec06890e341f}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!benchmark@{benchmark}}
+\index{benchmark@{benchmark}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{benchmark()}{benchmark()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_a832e2257f8a9039557d0ec06890e341f} 
+template$<$typename Container$>$ \\
+void benchmark (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failas}{, }\item[{const std::\+string \&}]{label}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!main@{main}}
+\index{main@{main}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_af8a2967b796a036e51512549cf5d5907}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!ms@{ms}}
+\index{ms@{ms}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{ms()}{ms()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_af8a2967b796a036e51512549cf5d5907} 
+auto \doxymbox{\hyperlink{benchmark_8cpp_a6467787c3f0c7b583120dbcd04f67589}{ms}} (\begin{DoxyParamCaption}\item[{auto}]{d}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_a765da395eb78fd7beabbb7ee992cd66f}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!rusiuoti\_bench@{rusiuoti\_bench}}
+\index{rusiuoti\_bench@{rusiuoti\_bench}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuoti\_bench()}{rusiuoti\_bench()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_a765da395eb78fd7beabbb7ee992cd66f} 
+template$<$typename Container$>$ \\
+void rusiuoti\+\_\+bench (\begin{DoxyParamCaption}\item[{Container \&}]{A}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_ac4fbc558d84790021ddb330d3eb7293b}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!skaiciuoti@{skaiciuoti}}
+\index{skaiciuoti@{skaiciuoti}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{skaiciuoti()}{skaiciuoti()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_ac4fbc558d84790021ddb330d3eb7293b} 
+template$<$typename Container$>$ \\
+void skaiciuoti (\begin{DoxyParamCaption}\item[{Container \&}]{A}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_a75ddb78d1ecca1d79f465c00f986c2af}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!skaityti@{skaityti}}
+\index{skaityti@{skaityti}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{skaityti()}{skaityti()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_a75ddb78d1ecca1d79f465c00f986c2af} 
+template$<$typename Container$>$ \\
+void skaityti (\begin{DoxyParamCaption}\item[{Container \&}]{A}{, }\item[{const std::\+string \&}]{failas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__full_8cpp_a7568ea1ffc9ced595a8bf366e3e87235}\index{benchmark\_full.cpp@{benchmark\_full.cpp}!skirstyti\_bench@{skirstyti\_bench}}
+\index{skirstyti\_bench@{skirstyti\_bench}!benchmark\_full.cpp@{benchmark\_full.cpp}}
+\doxysubsubsection{\texorpdfstring{skirstyti\_bench()}{skirstyti\_bench()}}
+{\footnotesize\ttfamily \label{benchmark__full_8cpp_a7568ea1ffc9ced595a8bf366e3e87235} 
+template$<$typename Container$>$ \\
+void skirstyti\+\_\+bench (\begin{DoxyParamCaption}\item[{Container \&}]{studentai}{, }\item[{Container \&}]{nevykeliai}{}\end{DoxyParamCaption})}
+

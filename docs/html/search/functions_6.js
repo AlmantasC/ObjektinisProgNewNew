@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['pagalgal_0',['pagalGal',['../mylib_8cpp.html#a410adede9154531f07eda8f6f3b07e2e',1,'pagalGal(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp'],['../mylib_8h.html#a410adede9154531f07eda8f6f3b07e2e',1,'pagalGal(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp']]],
-  ['pagalpavard_1',['pagalPavard',['../mylib_8cpp.html#ac9ffeaeee6c8da4e0ea2f42fb23ba568',1,'pagalPavard(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp'],['../mylib_8h.html#ac9ffeaeee6c8da4e0ea2f42fb23ba568',1,'pagalPavard(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp']]],
-  ['pagalvard_2',['pagalVard',['../mylib_8cpp.html#accf34f83b0434344d79bed324be168b8',1,'pagalVard(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp'],['../mylib_8h.html#accf34f83b0434344d79bed324be168b8',1,'pagalVard(const studentas &amp;a, const studentas &amp;b):&#160;mylib.cpp']]],
-  ['print_3',['print',['../class_zmogus.html#a352531099db952e52228c06290c7e717',1,'Zmogus::print()'],['../classstudentas.html#a19028246ab6d6822a33cc291c5d43a97',1,'studentas::print()']]],
-  ['printrez_4',['printRez',['../mylib_8cpp.html#a51a3dcd0a5d07efd6fc7b3f02fa0a82d',1,'printRez(std::ostream &amp;out, Studentai&lt; studentas &gt; &amp;A, int skaiciavimas):&#160;mylib.cpp'],['../mylib_8h.html#a51a3dcd0a5d07efd6fc7b3f02fa0a82d',1,'printRez(std::ostream &amp;out, Studentai&lt; studentas &gt; &amp;A, int skaiciavimas):&#160;mylib.cpp']]]
+  ['generuotifaila_0',['generuotiFaila',['../mylib_8cpp.html#a533a0a21b762dcd162d0c0ee9af14c1d',1,'generuotiFaila():&#160;mylib.cpp'],['../mylib_8h.html#a533a0a21b762dcd162d0c0ee9af14c1d',1,'generuotiFaila():&#160;mylib.cpp']]],
+  ['generuotipazymius_1',['generuotiPazymius',['../mylib_8cpp.html#a631c551d10a6b06d4300e4081bd2a35c',1,'generuotiPazymius(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp'],['../mylib_8h.html#a631c551d10a6b06d4300e4081bd2a35c',1,'generuotiPazymius(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp']]],
+  ['generuotiviska_2',['generuotiViska',['../mylib_8cpp.html#a08d1aee607fbc2e6d9a2ad76c889e6a0',1,'generuotiViska(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp'],['../mylib_8h.html#a08d1aee607fbc2e6d9a2ad76c889e6a0',1,'generuotiViska(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp']]],
+  ['getegz_3',['getEgz',['../classstudentas.html#ac0e514683b1825bd7a8ee077365f4214',1,'studentas']]],
+  ['getfile_4',['getFile',['../mylib_8cpp.html#a73920bb488f027ee942c894a06284486',1,'getFile():&#160;mylib.cpp'],['../mylib_8h.html#a73920bb488f027ee942c894a06284486',1,'getFile():&#160;mylib.cpp']]],
+  ['getgal_5',['getGal',['../classstudentas.html#a38451615fced40e7e8db3b836f42744d',1,'studentas']]],
+  ['getint_6',['getInt',['../mylib_8cpp.html#a81d8087f3257c783f8ba4479f103835b',1,'getInt(int min, int max):&#160;mylib.cpp'],['../mylib_8h.html#a81d8087f3257c783f8ba4479f103835b',1,'getInt(int min, int max):&#160;mylib.cpp']]],
+  ['getpavarde_7',['getPavarde',['../class_zmogus.html#ab7a875d196b6224edf8280829193e410',1,'Zmogus::getPavarde()'],['../classstudentas.html#a15110f64f8e99aaec855e794f9783c29',1,'studentas::getPavarde() const override']]],
+  ['getpaz_8',['getPaz',['../classstudentas.html#a627468b61b2f78fc59244a19234c08c8',1,'studentas']]],
+  ['getrez_9',['getRez',['../classstudentas.html#abfaa229484a848e938a560a4693db73f',1,'studentas']]],
+  ['getvardas_10',['getVardas',['../class_zmogus.html#a34858b36a8082c3ce73c3230b3f3530d',1,'Zmogus::getVardas()'],['../classstudentas.html#a08b3642f85b7826f54f0b108ab5c8931',1,'studentas::getVardas()']]]
 ];

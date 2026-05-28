@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generavimas_0',['Dokumentacijos generavimas',['../md__r_e_a_d_m_e.html#autotoc_md35',1,'']]],
+  ['generavimas_0',['Dokumentacijos generavimas',['../md__r_e_a_d_m_e.html#autotoc_md36',1,'']]],
   ['generuotifaila_1',['generuotiFaila',['../mylib_8cpp.html#a533a0a21b762dcd162d0c0ee9af14c1d',1,'generuotiFaila():&#160;mylib.cpp'],['../mylib_8h.html#a533a0a21b762dcd162d0c0ee9af14c1d',1,'generuotiFaila():&#160;mylib.cpp']]],
   ['generuotipazymius_2',['generuotiPazymius',['../mylib_8cpp.html#a631c551d10a6b06d4300e4081bd2a35c',1,'generuotiPazymius(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp'],['../mylib_8h.html#a631c551d10a6b06d4300e4081bd2a35c',1,'generuotiPazymius(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp']]],
   ['generuotiviska_3',['generuotiViska',['../mylib_8cpp.html#a08d1aee607fbc2e6d9a2ad76c889e6a0',1,'generuotiViska(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp'],['../mylib_8h.html#a08d1aee607fbc2e6d9a2ad76c889e6a0',1,'generuotiViska(Studentai&lt; studentas &gt; &amp;A, int &amp;m):&#160;mylib.cpp']]],

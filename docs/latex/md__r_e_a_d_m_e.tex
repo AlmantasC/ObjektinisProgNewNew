@@ -148,28 +148,47 @@ Reikalavimai:\+ CMake ≥ 3.\+14, Min\+GW (Windows) arba GCC (Linux).
 \begin{DoxyCode}{0}
 \DoxyCodeLine{mkdir\ build}
 \DoxyCodeLine{cd\ build}
-\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=vector\ \ \ \#\ Windows}
-\DoxyCodeLine{\#\ cmake\ ..\ -\/DCONTAINER=vector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Linux}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ \ \ \ \ \ \ \ \ \ \#\ numatytasis\ –\ Vector<T>}
 \DoxyCodeLine{cmake\ -\/-\/build\ .}
 
 \end{DoxyCode}
 
 
-Vietoje {\ttfamily vector} galima nurodyti {\ttfamily list} arba {\ttfamily deque}. Numatytoji reikšmė — {\ttfamily vector}.\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{Testų kompiliavimas ir paleidimas}{Testų kompiliavimas ir paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md15}
+Konteinerio pasirinkimas:\+
+
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=vector\ -\/DBUILD\_TESTS=ON}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=myvector\ \ \#\ Vector<T>\ (numatytasis)}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=vector\ \ \ \ \ \#\ std::vector}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=list\ \ \ \ \ \ \ \#\ std::list}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DCONTAINER=deque\ \ \ \ \ \ \#\ std::deque}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{Testų kompiliavimas ir paleidimas}{Testų kompiliavimas ir paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DBUILD\_TESTS=ON}
 \DoxyCodeLine{cmake\ -\/-\/build\ .}
-\DoxyCodeLine{ctest\ -\/-\/output-\/on-\/failure}
-\DoxyCodeLine{\#\ arba\ tiesiogiai:}
-\DoxyCodeLine{./tests}
+\DoxyCodeLine{}
+\DoxyCodeLine{./tests\ \ \ \ \ \ \ \ \ \ \#\ studentas\ klasės\ testai\ (18\ testų)}
+\DoxyCodeLine{./vector\_tests\ \ \ \#\ Vector<T>\ klasės\ testai\ (35\ testai)}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{\texorpdfstring{Spartos benchmark}{Spartos benchmark}}\label{md__r_e_a_d_m_e_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..\ -\/G\ "{}MinGW\ Makefiles"{}\ -\/DBUILD\_BENCHMARK=ON\ -\/DBUILD\_BENCHMARK\_FULL=ON}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+\DoxyCodeLine{}
+\DoxyCodeLine{./benchmark\ \ \ \ \ \ \ \ \#\ push\_back\ spartos\ testas}
+\DoxyCodeLine{./benchmark\_full\ \ \ \#\ pilnas\ programos\ spartos\ testas}
 
 \end{DoxyCode}
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysection{\texorpdfstring{Klasės ir Struct Kompiliavimo flag\textquotesingle{}ų testas}{Klasės ir Struct Kompiliavimo flag\textquotesingle{}ų testas}}\label{md__r_e_a_d_m_e_autotoc_md17}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{\texorpdfstring{100 000 studentų}{100 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md18}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{\texorpdfstring{Klasės ir Struct Kompiliavimo flag\textquotesingle{}ų testas}{Klasės ir Struct Kompiliavimo flag\textquotesingle{}ų testas}}\label{md__r_e_a_d_m_e_autotoc_md18}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{100 000 studentų}{100 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md19}
 
 \begin{DoxyTable}{4}{}{}{1}
 \SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Optimizavimas  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Versija  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Vykdymo laikas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Failo dydis (ms)  \\
@@ -180,7 +199,7 @@ Vietoje {\ttfamily vector} galima nurodyti {\ttfamily list} arba {\ttfamily dequ
 \SetCell{r}O3  &\SetCell{r}struct  &\SetCell{r}854.\+61  &\SetCell{r}1055  \\
 \SetCell{r}&\SetCell{r}class  &\SetCell{r}641.\+19  &\SetCell{r}1043  \\
 \end{DoxyTable}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{1 000 000 studentų}{1 000 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md19}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{\texorpdfstring{1 000 000 studentų}{1 000 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md20}
 
 \begin{DoxyTable}{4}{}{}{1}
 \SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Optimizavimas  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Versija  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Vykdymo laikas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Failo dydis (ms)  \\
@@ -196,7 +215,7 @@ Vietoje {\ttfamily vector} galima nurodyti {\ttfamily list} arba {\ttfamily dequ
 Rezultatai rodo, kad class visais atvejais veikė greičiau nei struct. Didinant optimizavimo lygį (O1 → O3), vykdymo laikas mažėjo, o failo dydis didėjo.
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysection{\texorpdfstring{Vienetų testai}{Vienetų testai}}\label{md__r_e_a_d_m_e_autotoc_md21}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{\texorpdfstring{Vienetų testai}{Vienetų testai}}\label{md__r_e_a_d_m_e_autotoc_md22}
 Vienetų testai ({\ttfamily \doxylink{test_2main_8cpp}{test/\+main.\+cpp}}) realizuoti naudojant {\bfseries{Google Test}} karkasą. Testai tikrina pagrindinį {\ttfamily \doxylink{classstudentas}{studentas}} klasės funkcionalumą ir Rule of Five realizaciją. GTest atsisiunčiamas automatiškai per CMake {\ttfamily Fetch\+Content} — rankinio diegimo nereikia.
 
 Testuojamos šios dalys:\+
@@ -227,7 +246,7 @@ Sėkmingai praėjus testams išvedama:\+
 \DoxyCodeLine{[\ \ PASSED\ \ ]\ 18\ tests.}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysubsection{\texorpdfstring{Testų paskirtis}{Testų paskirtis}}\label{md__r_e_a_d_m_e_autotoc_md22}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsection{\texorpdfstring{Testų paskirtis}{Testų paskirtis}}\label{md__r_e_a_d_m_e_autotoc_md23}
 Testai skirti užtikrinti, kad:\+
 
 
@@ -240,13 +259,13 @@ Testai skirti užtikrinti, kad:\+
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysection{\texorpdfstring{Spartos tyrimas}{Spartos tyrimas}}\label{md__r_e_a_d_m_e_autotoc_md24}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysection{\texorpdfstring{Spartos tyrimas}{Spartos tyrimas}}\label{md__r_e_a_d_m_e_autotoc_md25}
 Tyrimui naudojami prieš tai sugeneruoti failai. Bandyti visi rūšiavimo ir galutinio skaičiavimo būdai, rezultatai išreikšti vidurkiu.
 
 {\bfseries{Specs:\+}} AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.\+2 250GB
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsection{\texorpdfstring{1 strategija}{1 strategija}}\label{md__r_e_a_d_m_e_autotoc_md26}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsection{\texorpdfstring{1 strategija}{1 strategija}}\label{md__r_e_a_d_m_e_autotoc_md27}
 Bendro studentai konteinerio skaidymas į du naujus to paties tipo konteinerius:\+ „nevykeliai"{} ir „nerds"{}. Tokiu būdu tas pats studentas yra dvejuose konteineriuose:\+ bendrame studentai ir viename iš suskaidytų.
 
 
@@ -271,7 +290,7 @@ Bendro studentai konteinerio skaidymas į du naujus to paties tipo konteinerius:
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{\texorpdfstring{2 strategija}{2 strategija}}\label{md__r_e_a_d_m_e_autotoc_md28}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsection{\texorpdfstring{2 strategija}{2 strategija}}\label{md__r_e_a_d_m_e_autotoc_md29}
 Bendro studentų konteinerio skaidymas panaudojant tik vieną naują konteinerį:\+ „nevykeliai"{}. Tokiu būdu, jei studentas yra nevykelis, jį turime įkelti į naująjį „nevykelių"{} konteinerį ir ištrinti iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje liks vien tik nerds.
 
 
@@ -296,7 +315,7 @@ Bendro studentų konteinerio skaidymas panaudojant tik vieną naują konteinerį
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysubsection{\texorpdfstring{3 strategija}{3 strategija}}\label{md__r_e_a_d_m_e_autotoc_md30}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{\texorpdfstring{3 strategija}{3 strategija}}\label{md__r_e_a_d_m_e_autotoc_md31}
 Tas pats kaip 2 strategija, tačiau skirstymui naudojamas {\ttfamily std::\+partition} — elementai perstumiami vietoje (in-\/place) vienu perėjimu, po to nevykeliai nukopijuojami į naują konteinerį ir ištrinami iš bendro. Skirtingai nuo 2 strategijos, kuri naudoja {\ttfamily copy\+\_\+if} ir {\ttfamily remove\+\_\+if} (du perėjimai), {\ttfamily partition} tai atlieka vienu perėjimu.
 
 
@@ -321,18 +340,18 @@ Tas pats kaip 2 strategija, tačiau skirstymui naudojamas {\ttfamily std::\+part
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysection{\texorpdfstring{Išvados}{Išvados}}\label{md__r_e_a_d_m_e_autotoc_md32}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysection{\texorpdfstring{Išvados}{Išvados}}\label{md__r_e_a_d_m_e_autotoc_md33}
 Nuskaitymo ir rūšiavimo rezultatai išlieka panašūs visose trijose strategijose, kaip ir tikėtasi — skiriasi tik skirstymo dalis. Aiškiausiai tai matyti lyginant 2 ir 3 strategiją:\+ {\ttfamily partition} (3 strat.) skirstymas yra žymiai greitesnis už {\ttfamily copy\+\_\+if} + {\ttfamily remove\+\_\+if} (2 strat.), nes atlieka tik vieną perėjimą per konteinerį vietoj dviejų. Skirtumas ypač ryškus didesniuose failuose — pvz., 10M studentų su vector:\+ 2 strategija \texorpdfstring{$\sim$}{\string~}1559 ms, 3 strategija \texorpdfstring{$\sim$}{\string~}235 ms.
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysection{\texorpdfstring{Dokumentacija}{Dokumentacija}}\label{md__r_e_a_d_m_e_autotoc_md34}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysection{\texorpdfstring{Dokumentacija}{Dokumentacija}}\label{md__r_e_a_d_m_e_autotoc_md35}
 Projekto dokumentacija sugeneruota naudojant {\bfseries{Doxygen}} ir prieinama {\ttfamily docs/\+} kataloge.
 
 
 \begin{DoxyItemize}
 \item {\ttfamily docs/\+html/\+index.\+html} — naršyklėje peržiūrima HTML dokumentacija.
 \item {\ttfamily docs/\+latex/\+refman.\+pdf} — sukompiliuotas PDF.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{\texorpdfstring{Dokumentacijos generavimas}{Dokumentacijos generavimas}}\label{md__r_e_a_d_m_e_autotoc_md35}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{\texorpdfstring{Dokumentacijos generavimas}{Dokumentacijos generavimas}}\label{md__r_e_a_d_m_e_autotoc_md36}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{doxygen\ Doxyfile}
@@ -341,7 +360,79 @@ Projekto dokumentacija sugeneruota naudojant {\bfseries{Doxygen}} ir prieinama {
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysection{\texorpdfstring{Versijų istorija}{Versijų istorija}}\label{md__r_e_a_d_m_e_autotoc_md37}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysection{\texorpdfstring{Vector konteineris (v3.\+0)}{Vector konteineris (v3.\+0)}}\label{md__r_e_a_d_m_e_autotoc_md38}
+Vietoje {\ttfamily std::\+vector} naudojamas savarankiškai sukurtas {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} šabloninis konteineris, dengiąs ≥ 80\% {\ttfamily std::\+vector} funkcijų.\hypertarget{md__r_e_a_d_m_e_autotoc_md39}{}\doxysubsection{\texorpdfstring{Implementuotos funkcijos}{Implementuotos funkcijos}}\label{md__r_e_a_d_m_e_autotoc_md39}
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Kategorija  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Funkcijos  \\
+Konstruktoriai  &{\ttfamily \doxylink{class_vector}{Vector()}}, {\ttfamily \doxylink{class_vector}{Vector(n, val)}}, {\ttfamily \doxylink{class_vector}{Vector(init\+\_\+list)}}, copy, move, {\ttfamily operator=}  \\
+Capacity  &{\ttfamily size()}, {\ttfamily capacity()}, {\ttfamily empty()}, {\ttfamily reserve()}, {\ttfamily shrink\+\_\+to\+\_\+fit()}, {\ttfamily max\+\_\+size()}  \\
+Element access  &{\ttfamily operator\+[]\+}, {\ttfamily at()}, {\ttfamily front()}, {\ttfamily back()}, {\ttfamily data()}  \\
+Modifiers  &{\ttfamily push\+\_\+back()}, {\ttfamily pop\+\_\+back()}, {\ttfamily insert()}, {\ttfamily erase()}, {\ttfamily clear()}, {\ttfamily resize()}, {\ttfamily emplace\+\_\+back()}, {\ttfamily assign()}, {\ttfamily \doxylink{vector_8h_a121f6c55e3c9b59ade573ea0294fd971}{swap()}}  \\
+Iteratoriai  &{\ttfamily begin()}, {\ttfamily end()}, {\ttfamily cbegin()}, {\ttfamily cend()}, {\ttfamily rbegin()}, {\ttfamily rend()}  \\
+Operatoriai  &{\ttfamily ==}, {\ttfamily !=}, {\ttfamily \texorpdfstring{$<$}{<}}, {\ttfamily \texorpdfstring{$<$}{<}=}, {\ttfamily \texorpdfstring{$>$}{>}}, {\ttfamily \texorpdfstring{$>$}{>}=}  \\
+\end{DoxyTable}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md40}{}\doxysubsection{\texorpdfstring{push\+\_\+back spartos analizė}{push\+\_\+back spartos analizė}}\label{md__r_e_a_d_m_e_autotoc_md40}
+Lyginamas {\ttfamily std::\+vector} ir {\ttfamily \doxylink{class_vector}{Vector}} užpildymo laikas naudojant {\ttfamily push\+\_\+back()} (5 paleidimų vidurkis, {\ttfamily -\/O2}).
+
+{\bfseries{Specs:\+}} AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.\+2 250GB
+
+
+\begin{DoxyTable}{4}{}{}{1}
+\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Elementų sk.  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}std::\+vector (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}\doxylink{class_vector}{Vector} (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Santykis  \\
+\SetCell{r}10 000  &\SetCell{r}0.\+200  &\SetCell{r}0.\+000  &\SetCell{r}0.\+00  \\
+\SetCell{r}100 000  &\SetCell{r}1.\+400  &\SetCell{r}1.\+000  &\SetCell{r}0.\+71  \\
+\SetCell{r}1 000 000  &\SetCell{r}14.\+575  &\SetCell{r}8.\+802  &\SetCell{r}0.\+60  \\
+\SetCell{r}10 000 000  &\SetCell{r}149.\+533  &\SetCell{r}120.\+233  &\SetCell{r}0.\+80  \\
+\SetCell{r}100 000 000  &\SetCell{r}1396.\+726  &\SetCell{r}1146.\+366  &\SetCell{r}0.\+82  \\
+\end{DoxyTable}
+
+
+{\ttfamily \doxylink{class_vector}{Vector}} pasirodo lygiavertiškai arba greičiau – tai laukiamas rezultatas, nes implementacija naudoja tą pačią {\ttfamily capacity \texorpdfstring{$\ast$}{*} 2} strategiją, tačiau be kai kurių {\ttfamily std::\+vector} papildomų patikrinimų.\hypertarget{md__r_e_a_d_m_e_autotoc_md41}{}\doxysubsection{\texorpdfstring{Atminties perskirstymai}{Atminties perskirstymai}}\label{md__r_e_a_d_m_e_autotoc_md41}
+Užpildant 100 000 000 elementų {\ttfamily push\+\_\+back()} funkcija:\+
+
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Konteineris  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Perskirstymų sk.  \\
+std::\+vector  &\SetCell{r}28  \\
+\doxylink{class_vector}{Vector}  &\SetCell{r}28  \\
+\end{DoxyTable}
+
+
+Abu konteineriai naudoja {\ttfamily capacity \texorpdfstring{$\ast$}{*} 2} strategiją, todėl perskirstymų skaičius sutampa. Perskirstymas įvyksta kai {\ttfamily capacity() == size()}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md43}{}\doxysection{\texorpdfstring{Vector spartos analizė – pilna programa}{Vector spartos analizė – pilna programa}}\label{md__r_e_a_d_m_e_autotoc_md43}
+Lyginamas {\ttfamily std::\+vector} ir {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} veikimas naudojant realius studentų duomenų failus. Matuojamos visos operacijos:\+ nuskaitymas, skaičiavimai, rūšiavimas ir skirstymas.
+
+{\bfseries{Specs:\+}} AMD Ryzen 5 3600 · HyperX DDR4 16GB · SSD 970 M.\+2 250GB ~\newline
+ {\bfseries{Kompiliavimas:\+}} {\ttfamily -\/O2}\hypertarget{md__r_e_a_d_m_e_autotoc_md44}{}\doxysubsection{\texorpdfstring{100 000 studentų}{100 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md44}
+
+\begin{DoxyTable}{6}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Konteineris  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Nuskaitymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skaičiavimai (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Rūšiavimas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skirstymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Iš viso (ms)  \\
+std::\+vector  &\SetCell{r}518.\+13  &\SetCell{r}2.\+00  &\SetCell{r}35.\+01  &\SetCell{r}4.\+00  &\SetCell{r}559.\+14  \\
+\doxylink{class_vector}{Vector}  &\SetCell{r}468.\+62  &\SetCell{r}2.\+00  &\SetCell{r}29.\+01  &\SetCell{r}7.\+00  &\SetCell{r}506.\+63  \\
+\end{DoxyTable}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md45}{}\doxysubsection{\texorpdfstring{1 000 000 studentų}{1 000 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md45}
+
+\begin{DoxyTable}{6}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Konteineris  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Nuskaitymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skaičiavimai (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Rūšiavimas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skirstymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Iš viso (ms)  \\
+std::\+vector  &\SetCell{r}4819.\+08  &\SetCell{r}25.\+01  &\SetCell{r}373.\+08  &\SetCell{r}43.\+00  &\SetCell{r}5260.\+17  \\
+\doxylink{class_vector}{Vector}  &\SetCell{r}4623.\+38  &\SetCell{r}25.\+01  &\SetCell{r}401.\+09  &\SetCell{r}79.\+02  &\SetCell{r}5128.\+49  \\
+\end{DoxyTable}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md46}{}\doxysubsection{\texorpdfstring{10 000 000 studentų}{10 000 000 studentų}}\label{md__r_e_a_d_m_e_autotoc_md46}
+
+\begin{DoxyTable}{6}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Konteineris  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Nuskaitymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skaičiavimai (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Rūšiavimas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Skirstymas (ms)  &\SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Iš viso (ms)  \\
+std::\+vector  &\SetCell{r}48743.\+07  &\SetCell{r}248.\+06  &\SetCell{r}4624.\+06  &\SetCell{r}416.\+10  &\SetCell{r}54031.\+28  \\
+\doxylink{class_vector}{Vector}  &\SetCell{r}47912.\+78  &\SetCell{r}260.\+25  &\SetCell{r}4675.\+22  &\SetCell{r}715.\+88  &\SetCell{r}53564.\+13  \\
+\end{DoxyTable}
+
+
+{\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} bendras veikimas yra lygiavertis {\ttfamily std::\+vector} — nuskaitymas ir rūšiavimas net šiek tiek greitesni dėl paprastesnės implementacijos. Skirstymas lėtesnis dėl {\ttfamily assign} su {\ttfamily make\+\_\+move\+\_\+iterator} — tai laukiamas rezultatas, nes {\ttfamily std::\+vector} turi optimizuotą šio metodo realizaciją.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysection{\texorpdfstring{Versijų istorija}{Versijų istorija}}\label{md__r_e_a_d_m_e_autotoc_md48}
 
 \begin{DoxyTable}{2}{}{}{1}
 \SetCell{r,bg=\tableheadbgcolor,font=\bfseries}Versija  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Pakeitimai  \\
@@ -353,4 +444,5 @@ Projekto dokumentacija sugeneruota naudojant {\bfseries{Doxygen}} ir prieinama {
 \SetCell{r}v1.\+2  &{\ttfamily struct \doxylink{classstudentas}{studentas}} pertvarkyta į {\ttfamily class \doxylink{classstudentas}{studentas}} su {\ttfamily private} laukais, getteriais ir setteriais. Realizuoti visi Rule of Five metodai (destruktorius, kopijavimo ir perkėlimo konstruktoriai, kopijavimo ir perkėlimo priskyrimo operatoriai). Perdengiami {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} ir {\ttfamily operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} įvesties/\+išvesties operatoriai. Pridėti vienetų testai ({\ttfamily test.\+cpp}).  \\
 \SetCell{r}v1.\+5  &Pridėta abstrakti klasė {\ttfamily \doxylink{class_zmogus}{Zmogus}}, iš kurios išvedama klasė {\ttfamily Studentas}  \\
 \SetCell{r}v2.\+0  &Bendras {\ttfamily src/\+} kodas visiems konteineriams — konteineris pasirenkamas per {\ttfamily -\/DCONTAINER=} CMake flagą. Vienetų testai perkelti į Google Test karkasą (18 testų). Pridėta Doxygen dokumentacija (HTML + PDF).  \\
+\SetCell{r}v3.\+0  &Sukurtas savarankiškas {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} konteineris, dengiantis ≥ 80\% {\ttfamily std::\+vector} metodų. Atlikta {\ttfamily push\+\_\+back} spartos analizė ir atminties perskirstymų palyginimas. Programa integruota su {\ttfamily \doxylink{class_vector}{Vector}} vietoje {\ttfamily std::\+vector}.  \\
 \end{DoxyTable}
