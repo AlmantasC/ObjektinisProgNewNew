@@ -4,10 +4,6 @@
 #include <limits>
 #include <initializer_list>
 
-// =============================================================
-// commit #1: skeletas – data_, size_, capacity_, push_back, []
-// =============================================================
-
 template <typename T>
 class Vector {
 private:
@@ -43,10 +39,6 @@ public:
     // --- operator[] ---
     T&       operator[](size_t i)       { return data_[i]; }
     const T& operator[](size_t i) const { return data_[i]; }
-
-    // =============================================================
-    // commit #2: copy/move konstruktoriai ir operator=
-    // =============================================================
 
     Vector() : data_(nullptr), size_(0), capacity_(0) {}
 
@@ -114,10 +106,6 @@ public:
         return *this;
     }
 
-    // =============================================================
-    // commit #3: iteratoriai – begin, end, cbegin, cend
-    // =============================================================
-
     using iterator               = T*;
     using const_iterator         = const T*;
     using reverse_iterator       = std::reverse_iterator<iterator>;
@@ -137,9 +125,6 @@ public:
     const_reverse_iterator crbegin() const { return const_reverse_iterator(cend()); }
     const_reverse_iterator crend()   const { return const_reverse_iterator(cbegin()); }
 
-    // =============================================================
-    // commit #4: capacity funkcijos – reserve, shrink_to_fit
-    // =============================================================
 
     void reserve(size_t newCap) {
         if (newCap <= capacity_) return;
@@ -160,10 +145,6 @@ public:
     size_t max_size() const {
         return std::numeric_limits<size_t>::max() / sizeof(T);
     }
-
-    // =============================================================
-    // commit #5: element access – at, front, back, data
-    // =============================================================
 
     T& at(size_t i) {
         if (i >= size_)
@@ -189,10 +170,6 @@ public:
 
     T*       data()        { return data_; }
     const T* data()  const { return data_; }
-
-    // =============================================================
-    // commit #6: modifiers I – insert, erase, clear
-    // =============================================================
 
     void clear() {
         size_ = 0;
@@ -243,10 +220,6 @@ public:
         return data_ + idxFirst;
     }
 
-    // =============================================================
-    // commit #7: modifiers II – resize, emplace_back, assign, swap
-    // =============================================================
-
     void resize(size_t newSize, const T& val = T()) {
         if (newSize > capacity_)
             reallocate(newSize);
@@ -296,10 +269,6 @@ public:
         std::swap(capacity_, other.capacity_);
     }
 
-    // =============================================================
-    // commit #8: palyginimo operatoriai – ==, !=, <, <=, >, >=
-    // =============================================================
-
     bool operator==(const Vector& other) const {
         if (size_ != other.size_) return false;
         for (size_t i = 0; i < size_; ++i)
@@ -318,10 +287,6 @@ public:
     bool operator>(const Vector& other)  const { return other < *this; }
     bool operator>=(const Vector& other) const { return !(*this < other); }
 };
-
-// =============================================================
-// commit #8 (tęsinys): ne-narys swap
-// =============================================================
 
 template <typename T>
 void swap(Vector<T>& a, Vector<T>& b) noexcept {
