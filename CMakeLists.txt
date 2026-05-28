@@ -23,6 +23,16 @@ if(BUILD_BENCHMARK)
     target_compile_options(benchmark PRIVATE -O2)
 endif()
 
+option(BUILD_BENCHMARK_FULL "Build full program benchmark" OFF)
+if(BUILD_BENCHMARK_FULL)
+    add_executable(benchmark_full
+        test/benchmark_full.cpp
+        src/mylib.cpp
+    )
+    target_include_directories(benchmark_full PRIVATE src)
+    target_compile_options(benchmark_full PRIVATE -O2)
+endif()
+
 option(BUILD_TESTS "Build tests" OFF)
 if(BUILD_TESTS)
     include(FetchContent)
