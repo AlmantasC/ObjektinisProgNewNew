@@ -24,6 +24,50 @@ public:
 
     ~Vector() { delete[] data_; }
 
+    // --- Copy konstruktorius ---
+    Vector(const Vector& other)
+    : data_(new T[other.capacity_]),
+      size_(other.size_),
+      capacity_(other.capacity_) {
+    for (size_t i = 0; i < size_; ++i)
+        data_[i] = other.data_[i];
+    }
+
+    // --- Move konstruktorius ---
+    Vector(Vector&& other) noexcept
+    : data_(other.data_),
+      size_(other.size_),
+      capacity_(other.capacity_) {
+    other.data_     = nullptr;
+    other.size_     = 0;
+    other.capacity_ = 0;
+    }
+
+    // --- Copy operator= ---
+    Vector& operator=(const Vector& other) {
+    if (this == &other) return *this;
+    delete[] data_;
+    capacity_ = other.capacity_;
+    size_     = other.size_;
+    data_     = new T[capacity_];
+    for (size_t i = 0; i < size_; ++i)
+        data_[i] = other.data_[i];
+    return *this;
+    }
+
+    // --- Move operator= ---
+    Vector& operator=(Vector&& other) noexcept {
+    if (this == &other) return *this;
+    delete[] data_;
+    data_           = other.data_;
+    size_           = other.size_;
+    capacity_       = other.capacity_;
+    other.data_     = nullptr;
+    other.size_     = 0;
+    other.capacity_ = 0;
+    return *this;
+}
+
     // --- Capacity ---
     size_t size()     const { return size_; }
     size_t capacity() const { return capacity_; }
