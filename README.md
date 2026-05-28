@@ -426,3 +426,4 @@ Lyginamas `std::vector` ir `Vector<T>` veikimas naudojant realius studentų duom
 | v1.2 | `struct studentas` pertvarkyta į `class studentas` su `private` laukais, getteriais ir setteriais. Realizuoti visi Rule of Five metodai (destruktorius, kopijavimo ir perkėlimo konstruktoriai, kopijavimo ir perkėlimo priskyrimo operatoriai). Perdengiami `operator<<` ir `operator>>` įvesties/išvesties operatoriai. Pridėti vienetų testai (`test.cpp`). |
 | v1.5 | Pridėta abstrakti klasė `Zmogus`, iš kurios išvedama klasė `Studentas` |
 | v2.0 | Bendras `src/` kodas visiems konteineriams — konteineris pasirenkamas per `-DCONTAINER=` CMake flagą. Vienetų testai perkelti į Google Test karkasą (18 testų). Pridėta Doxygen dokumentacija (HTML + PDF). |
+| v3.0 | Sukurtas savarankiškas `Vector<T>` konteineris, dengiantis ≥ 80% `std::vector` metodų. Atlikta `push_back` spartos analizė ir atminties perskirstymų palyginimas. Programa integruota su `Vector` vietoje `std::vector`. |
