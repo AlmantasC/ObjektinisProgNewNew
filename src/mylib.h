@@ -11,8 +11,11 @@
     template<typename T> using Studentai = std::list<T>;
 #elif defined(USE_DEQUE)
     template<typename T> using Studentai = std::deque<T>;
-#else
+#elif defined(USE_VECTOR)
     template<typename T> using Studentai = std::vector<T>;
+#else
+    #include "Vector.h"
+    template<typename T> using Studentai = Vector<T>;
 #endif
 
 class Zmogus {

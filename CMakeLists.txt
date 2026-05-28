@@ -4,9 +4,8 @@ project(ObjektinisProg)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CONTAINER "vector" CACHE STRING "Container type (vector, list, deque, myvector)")
-set_property(CACHE CONTAINER PROPERTY STRINGS vector list deque myvector)
-string(TOUPPER ${CONTAINER} CONTAINER_UPPER)
+set(CONTAINER "myvector" CACHE STRING "Container type (myvector, vector, list, deque)")
+set_property(CACHE CONTAINER PROPERTY STRINGS myvector vector list deque)
 
 set(SOURCES
     src/main.cpp

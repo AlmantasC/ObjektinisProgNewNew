@@ -286,6 +286,13 @@ public:
     bool operator<=(const Vector& other) const { return !(other < *this); }
     bool operator>(const Vector& other)  const { return other < *this; }
     bool operator>=(const Vector& other) const { return !(*this < other); }
+
+    template <typename InputIt>
+    void assign(InputIt first, InputIt last) {
+    clear();
+    for (auto it = first; it != last; ++it)
+        push_back(*it);
+}
 };
 
 template <typename T>
