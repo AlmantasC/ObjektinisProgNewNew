@@ -19,6 +19,20 @@ private:
     }
 
 public:
+    // --- Iterator tipai ---
+    using iterator       = T*;
+    using const_iterator = const T*;
+
+    // --- begin / end ---
+    iterator begin()             { return data_; }
+    iterator end()               { return data_ + size_; }
+
+    const_iterator begin()  const { return data_; }
+    const_iterator end()    const { return data_ + size_; }
+
+    const_iterator cbegin() const { return data_; }
+    const_iterator cend()   const { return data_ + size_; }
+
     // --- Konstruktoriai ---
     Vector() : data_(nullptr), size_(0), capacity_(0) {}
 
