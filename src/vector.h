@@ -121,4 +121,33 @@ public:
     size_t max_size() const {
         return std::numeric_limits<size_t>::max() / sizeof(T);
     }
+    // --- at (su ribų tikrinimu) ---
+    T& at(size_t i) {
+        if (i >= size_)
+            throw std::out_of_range("Vector::at – indeksas " +
+                                    std::to_string(i) +
+                                    " >= size " +
+                                    std::to_string(size_));
+        return data_[i];
+    }
+
+    const T& at(size_t i) const {
+        if (i >= size_)
+            throw std::out_of_range("Vector::at – indeksas " +
+                                    std::to_string(i) +
+                                    " >= size " +
+                                    std::to_string(size_));
+        return data_[i];
+    }
+
+    // --- front / back ---
+    T&       front()       { return data_[0]; }
+    const T& front() const { return data_[0]; }
+
+    T&       back()        { return data_[size_ - 1]; }
+    const T& back()  const { return data_[size_ - 1]; }
+
+    // --- data (raw pointer) ---
+    T*       data()        { return data_; }
+    const T* data()  const { return data_; }
 };
