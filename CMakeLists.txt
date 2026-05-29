@@ -18,7 +18,7 @@ target_compile_definitions(${CONTAINER} PRIVATE USE_${CONTAINER_UPPER})
 
 option(BUILD_BENCHMARK "Build Vector benchmark" OFF)
 if(BUILD_BENCHMARK)
-    add_executable(benchmark benchmark.cpp)
+    add_executable(benchmark test/benchmark.cpp)
     target_include_directories(benchmark PRIVATE src)
     target_compile_options(benchmark PRIVATE -O2)
 endif()

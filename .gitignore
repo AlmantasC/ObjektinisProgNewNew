@@ -6,3 +6,4 @@
 *.layout
 bin/
 obj/
+/build
